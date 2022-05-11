@@ -44,11 +44,11 @@ jobs:
           #export P=/usr/local/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
           export P=/usr/local/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/lib/python3.8
           ls -la $P
-          export LD_LIBRARY_PATH=$P/lib-dynload
+          #export LD_LIBRARY_PATH=$P/lib-dynload
           #/Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload
-          export RUN_LD_PATH=$P/lib-dynload
+          #export RUN_LD_PATH=$P/lib-dynload
           #export PYTHONHOME=$P
-          export PYTHONPATH=.:$P
+          #export PYTHONPATH=.:$P
           #/Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload
           python -vvvvv -c 'import os;print(os.getenv("LD_LIBRARY_PATH"))'
           python -vvvvv -c 'import os;print(os.getenv("RUN_LD_PATH"))'
