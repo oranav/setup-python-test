@@ -47,11 +47,11 @@ jobs:
           export LD_LIBRARY_PATH=$P/lib-dynload
           #/Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload
           export RUN_LD_PATH=$P/lib-dynload
-          export PYTHONHOME=$P
+          #export PYTHONHOME=$P
           export PYTHONPATH=.:$P
           #/Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload
-          python -c 'import os;print(os.getenv("LD_LIBRARY_PATH"))'
-          python -c 'import os;print(os.getenv("RUN_LD_PATH"))'
-          python -c 'import os;print(os.getenv("PYTHONHOME"))'
-          python -c 'import os;print(os.getenv("PYTHONPATH"))'
+          python -vvvvv -c 'import os;print(os.getenv("LD_LIBRARY_PATH"))'
+          python -vvvvv -c 'import os;print(os.getenv("RUN_LD_PATH"))'
+          python -vvvvv -c 'import os;print(os.getenv("PYTHONHOME"))'
+          python -vvvvv -c 'import os;print(os.getenv("PYTHONPATH"))'
           sudo dtruss python tk_min.py
