@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  selfhosted-agent_toolsdirectory:
+  set_up_Python_3_10:
     # The type of runner that the job will run on
     runs-on: debian1012
     steps:
@@ -28,7 +28,8 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: "3.10"
-          cache: "pip"
+        env:
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
