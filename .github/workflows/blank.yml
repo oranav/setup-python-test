@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: 3.9-dev
       - run: |
-          wchich python
+          which python
           python --version
   version_3_9:
     if: ${{ true }}
@@ -37,5 +37,5 @@ jobs:
         with:
           python-version: 3.9
       - run: |
-          wchich python
+          which python
           python --version
