@@ -25,7 +25,7 @@ jobs:
         run: set
       - run: |
           whoami
-          ls -l /opt/hostedtoolcache
+          ls -l /opt/hostedtoolcache/Python
           python --version
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
