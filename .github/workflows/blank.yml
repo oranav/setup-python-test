@@ -18,7 +18,7 @@ jobs:
   set_up_Python_3_10_ubuntu2004_hosted:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
-    if: ${{ false}}
+    if: ${{ false }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -42,6 +42,7 @@ jobs:
   set_up_Python_3_10_debian1012:
     # The type of runner that the job will run on
     runs-on: debian1012
+    if: ${{ false }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -68,7 +69,8 @@ jobs:
       - name: Show env
         run: set
       - name: Set up Python 3.10
-        uses: actions/setup-python@v3
+      #  uses: actions/setup-python@v3
+        uses: akv-platform/setup-python@dev1
         with:
           python-version: "3.10"
           architecture: "x64"
