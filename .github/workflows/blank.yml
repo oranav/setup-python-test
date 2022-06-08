@@ -16,10 +16,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  set_up_Python_3_10:
+  set_up_Python_3_10_debian1012:
     # The type of runner that the job will run on
-    # runs-on: debian1012
-    runs-on: self-hosted
+    runs-on: debian1012
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -30,8 +29,28 @@ jobs:
         with:
           python-version: "3.10"
           architecture: "x64"
-#        env:
-#          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+        env:
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+      - run: |
+          whoami
+          ls -l /opt/hostedtoolcache
+          python --version
+
+  set_up_Python_3_10_ubuntu2004:
+    # The type of runner that the job will run on
+    runs-on: debian1012
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Show env
+        run: set
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+          architecture: "x64"
+        env:
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
