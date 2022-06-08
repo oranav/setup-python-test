@@ -36,7 +36,7 @@ jobs:
           AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - run: |
           whoami
-          ls -l /opt/hostedtoolcache
+          ls -l /opt/hostedtoolcache/Python
           python --version
   set_up_Python_3_10_debian1012:
     # The type of runner that the job will run on
