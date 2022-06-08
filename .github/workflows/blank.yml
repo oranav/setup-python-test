@@ -18,7 +18,7 @@ jobs:
   set_up_Python_3_10_ubuntu2004_hosted:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
-    if: ${false}
+    if: ${{ false}}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
