@@ -29,8 +29,8 @@ jobs:
         with:
           python-version: "3.9"
           architecture: "x64"
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+#        env:
+#          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
@@ -49,8 +49,8 @@ jobs:
         with:
           python-version: "3.9"
           architecture: "x64"
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+ #       env:
+ #         AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
