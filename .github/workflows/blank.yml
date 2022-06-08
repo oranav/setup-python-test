@@ -70,7 +70,7 @@ jobs:
         run: set
       - name: Set up Python 3.10
       #  uses: actions/setup-python@v3
-        uses: akv-platform/setup-python@dev4
+        uses: akv-platform/setup-python@dev5
         with:
           python-version: "3.10"
           architecture: "x64"
