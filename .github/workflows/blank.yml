@@ -36,10 +36,10 @@ jobs:
           ls -la /usr/local/opt/
           ls -la /usr/local/opt/tcl-tk/
           ls -la /usr/local/opt/tcl-tk/include
-          cat /usr/local/opt/tcl-tk/include/tk.h
+          # cat /usr/local/opt/tcl-tk/include/tk.h
           ls -la /usr/local/Cellar
-          ls -la /usr/local/Cellar/tcl-tk
-          ls -la /usr/local/Cellar/tcl-tk/include
+          #ls -la /usr/local/Cellar/tcl-tk
+          # ls -la /usr/local/Cellar/tcl-tk/include
       - name: tkinter
         run: |
           ls -la
