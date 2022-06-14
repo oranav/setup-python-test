@@ -31,6 +31,10 @@ jobs:
       - name: cat
         run:  |
           set
+      - name: tk
+        run: |
+          ls -la /usr/local/opt/tcl-tk/
+          ls -la /usr/local/opt/tcl-tk/include
       - name: find
         run:  |
           #brew config
