@@ -42,10 +42,11 @@ jobs:
           # ls -la /usr/local/Cellar/tcl-tk/include
       - name: tkinter
         run: |
-          ls -la
           ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64
-          ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib
-          ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
+          ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/include
+          #ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib
+          #ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
+          strings /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload/_tkinter.cpython-37m-darwin.so
       - name: find
         run:  |
           #brew config
