@@ -40,6 +40,11 @@ jobs:
           ls -la /usr/local/Cellar
           ls -la /usr/local/Cellar/tcl-tk
           ls -la /usr/local/Cellar/tcl-tk/include
+      - name: tkinter
+        run: |
+          ls -la
+          ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib
+          ls -la /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7
       - name: find
         run:  |
           #brew config
