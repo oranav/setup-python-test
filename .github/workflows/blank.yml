@@ -59,6 +59,9 @@ jobs:
       - name: brew info tcl-tk
         run: |
           brew info tcl-tk
+      - name: systme tcl-tk
+        run: |
+          ls -la `which tclsh`
       - name: Run tk script vvvvv (closes itself after 5 seconds)
         run: |
           #export P=/usr/local/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
@@ -74,9 +77,9 @@ jobs:
           #python -c 'import os;print(os.getenv("RUN_LD_PATH"))'
           #python -c 'import os;print(os.getenv("PYTHONHOME"))'
           #python -c 'import os;print(os.getenv("PYTHONPATH"))'
-          python -vvvvv tk_min.py
+          #python -vvvvv tk_min.py
           #python tk_min.py
-          #sudo dtruss python tk_min.py
+          sudo dtruss python tk_min.py
       - name: Run tk script dtruss (closes itself after 5 seconds)
         run: |
           sudo dtruss python tk_min.py
