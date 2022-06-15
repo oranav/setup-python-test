@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python 3.7
         uses: actions/setup-python@v3
         with:
-          python-version: 3.7.10
+          python-version: 3.7.15
       - name: cat
         run:  |
           set
@@ -58,11 +58,11 @@ jobs:
           #rm /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload/_tkinter.*.so
       - name: brew info tcl-tk
         run: |
-          brew info tcl-tk
+          #brew info tcl-tk
       - name: systme tcl-tk
         run: |
-          ls -la `which tclsh`
-          find /usr/lib -name 'libtk*'
+          #ls -la `which tclsh`
+          #find /usr/lib -name 'libtk*'
       - name: Run tk script vvvvv (closes itself after 5 seconds)
         run: |
           #export P=/usr/local/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
@@ -79,6 +79,9 @@ jobs:
           #python -c 'import os;print(os.getenv("PYTHONHOME"))'
           #python -c 'import os;print(os.getenv("PYTHONPATH"))'
           #python -vvvvv tk_min.py
+          export DYLD_PRINT_LIBRARIES=1
+          export DYLD_PRINT_LIBRARIES_POST_LAUNCH=1
+          export DYLD_PRINT_RPATHS=1
           python tk_min.py
           #sudo dtruss python tk_min.py
 
