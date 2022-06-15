@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python 3.7.9
         uses: actions/setup-python@v3
         with:
-          python-version: 3.7
+          python-version: 3.7.9
       - name: cat
         run:  |
           set
@@ -79,8 +79,8 @@ jobs:
           #python -c 'import os;print(os.getenv("PYTHONHOME"))'
           #python -c 'import os;print(os.getenv("PYTHONPATH"))'
           #python -vvvvv tk_min.py
-          #python tk_min.py
-          sudo dtruss python tk_min.py
+          python tk_min.py
+          #sudo dtruss python tk_min.py
       - name: Run tk script dtruss (closes itself after 5 seconds)
         run: |
           sudo dtruss python tk_min.py
