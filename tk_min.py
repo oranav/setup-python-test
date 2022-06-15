@@ -7,6 +7,7 @@ import tkinter as tk
 
 
 root = tk.Tk()
+print(root.getvar("tk_version"))
 
 label = tk.Label(root, text="Hello World!")
 label.pack(padx=20, pady=20)
