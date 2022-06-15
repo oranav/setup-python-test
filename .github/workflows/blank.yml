@@ -62,6 +62,7 @@ jobs:
       - name: systme tcl-tk
         run: |
           ls -la `which tclsh`
+          find /usr/lib -name 'libtk*'
       - name: Run tk script vvvvv (closes itself after 5 seconds)
         run: |
           #export P=/usr/local/Cellar/python@3.8/3.8.13/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
