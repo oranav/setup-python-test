@@ -4,10 +4,12 @@
 Simple Hello World! Tkinter GUI app that closes itself after 5 seconds.
 """
 import tkinter as tk
+import _tkinter
 
 
 root = tk.Tk()
 print(root.getvar("tk_version"))
+print(_tkinter.TK_VERSION)
 
 label = tk.Label(root, text="Hello World!")
 label.pack(padx=20, pady=20)
