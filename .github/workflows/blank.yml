@@ -58,7 +58,7 @@ jobs:
           #rm /Users/runner/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/lib-dynload/_tkinter.*.so
       - name: brew info tcl-tk
         run: |
-          #brew info tcl-tk
+          brew info tcl-tk
       - name: systme tcl-tk
         run: |
           #ls -la `which tclsh`
