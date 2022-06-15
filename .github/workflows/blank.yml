@@ -24,10 +24,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Show env
         run: set
-      - name: Set up Python 3.7.9
+      - name: Set up Python 3.7
         uses: actions/setup-python@v3
         with:
-          python-version: 3.7.9
+          python-version: 3.7.10
       - name: cat
         run:  |
           set
@@ -81,6 +81,4 @@ jobs:
           #python -vvvvv tk_min.py
           python tk_min.py
           #sudo dtruss python tk_min.py
-      - name: Run tk script dtruss (closes itself after 5 seconds)
-        run: |
-          sudo dtruss python tk_min.py
+
