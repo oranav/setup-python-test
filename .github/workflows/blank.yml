@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ emtpy-version ]
+    branches: [ issue-231-PYTHON_NNN ]
   pull_request:
-    branches: [ emtpy-version ]
+    branches: [ issue-231-PYTHON_NNN ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
