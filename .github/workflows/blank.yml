@@ -32,6 +32,10 @@ jobs:
           ls -l "$pythonLocation"
         name: pythonLocation
       - run: |
+          echo "expected $PKG_CONFIG_PATH"
+          ls -l "$pythonLocation/lib/pkgconfig"
+        name: PKG_CONFIG_PATH
+      - run: |
           echo $PKG_CONFIG_PATH
           ls -l "$PKG_CONFIG_PATH"
         name: PKG_CONFIG_PATH
