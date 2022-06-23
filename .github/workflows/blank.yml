@@ -58,11 +58,20 @@ jobs:
     if: ${{ true }}
     runs-on: ubuntu-latest
     container:
-      image: ubuntu-22f.04
+      image: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - run: |
-          find /usr -name 'libffi.*'            
+          find /usr -name 'libffi.*'
+  find-2010-container:
+    if: ${{ true }}
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu-20.10
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          find /usr -name 'libffi.*'              
   version-set:
     # The type of runner that the job will run on
     if: ${{ false }}
