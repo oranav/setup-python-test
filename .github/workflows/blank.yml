@@ -16,21 +16,21 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   find-1804:
-    if: ${{ false }}
+    if: ${{ true }}
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - run: |
           find /usr -name 'libffi.*'
   find-2004:
-    if: ${{ false }}
+    if: ${{ true }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - run: |
           find /usr -name 'libffi.*'
   find-2204:
-    if: ${{ false }}
+    if: ${{ true }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
