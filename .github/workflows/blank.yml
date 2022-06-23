@@ -34,8 +34,8 @@ jobs:
       - run: |
           echo "expected $PKG_CONFIG_PATH"
           ls -l "$pythonLocation/lib/pkgconfig"
-        name: PKG_CONFIG_PATH
+        name: correct PKG_CONFIG_PATH
       - run: |
           echo $PKG_CONFIG_PATH
           ls -l "$PKG_CONFIG_PATH"
-        name: PKG_CONFIG_PATH
+        name: current PKG_CONFIG_PATH
