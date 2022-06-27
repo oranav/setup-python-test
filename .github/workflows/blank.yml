@@ -27,5 +27,5 @@ jobs:
           curl -LO http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
           sudo dpkg -i libffi6_3.2.1-8_amd64.deb
           dpkg-deb -c libffi6_3.2.1-8_amd64.deb
-          ls -la /usr/lib
+          ls -la /usr/lib/x86_64-linux-gnu
 
