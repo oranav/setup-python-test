@@ -17,12 +17,31 @@ jobs:
   macos:
     runs-on: macos-10.15
     steps:
+      - uses: actions/checkout@v2
       - name: Show env
         run: set
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7.7
+          architecture: x64
+      - run: |
+          which python
+          python --version
+          python tcltk.py
+          
   linux:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Show env
         run: set
-
-  
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7.7
+          architecture: x64
+      - run: |
+          which python
+          python --version
+          python tcltk.py 
