@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Show env
-        run: set | grep DISPLAY
+        run: set | grep DISPLAY || echo "no DISPLAY"
       - name: Setup python
         uses: actions/setup-python@v2
         with:
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Show env
-        run: set | grep DISPLAY
+        run: set | grep DISPLAY || echo "no DISPLAY"
       - name: Setup python
         uses: actions/setup-python@v2
         with:
