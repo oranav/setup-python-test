@@ -15,15 +15,77 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  version-set:
+  python-on-2204:
     # The type of runner that the job will run on
     if: ${{ true }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: build
+        env:
+          XVERBOSE: 1
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ls -la
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
       - run: |
+          pip install cffi
+
+      - name: run python3 ffi
+        run: |
+          python3 ffi.py
+
+      - name: run python3 ctypes
+        run: |
+          python3 ctpes.py
+
+  build-on-1804:
+    # The type of runner that the job will run on
+    if: ${{ false }}
+    runs-on: ubuntu-18.04
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: install libffi6
+        if: ${{ false }}
+        run: |
+          sudo apt-get install libffi6 libffi-dev
+
+      - name: build
+        env:
+          XVERBOSE: 1
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ls -la
+          ./main
+          ./mainffi
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: somelib
+          path: build/libsomelib.so
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: mainffi
+          path: build/mainffi
+
+      - name: 
+        if: ${{ false }}
+        run: |
           set -x
           curl -LO http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
           sudo dpkg -i libffi6_3.2.1-8_amd64.deb
@@ -31,3 +93,20 @@ jobs:
           sudo ln -sf libffi.so.6.0.4 /usr/lib/x86_64-linux-gnu/libffi.so
           ls -la /usr/lib/x86_64-linux-gnu
 
+  run-on-2004:
+    if: ${{ false }}
+    runs-on: ubuntu-20.04
+    needs: build-on-1804
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: somelib
+    - uses: actions/download-artifact@v2
+      with:
+        name: mainffi
+    - run: |
+        curl -LO http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
+        sudo dpkg -i libffi6_3.2.1-8_amd64.deb
+    - run: |
+        chmod +x mainffi
+        ./mainffi
