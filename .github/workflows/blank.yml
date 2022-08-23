@@ -26,8 +26,8 @@ jobs:
           architecture: x64
           
       - run: |
-          python --version
-          ls -la $( which python )
+          python3 --version
+          ls -la $( which python3 )
           ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64
           ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/bin
           ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/include
@@ -40,8 +40,8 @@ jobs:
     steps:
 #      - uses: actions/checkout@v2
       - run: |
-          python --version
-          ls -la $( which python )
+          python3 --version
+          ls -la $( which python3 )
           
       - name: Setup python
         run: |
@@ -61,8 +61,8 @@ jobs:
           
       - run: |
           export PATH="/Users/runner/hostedtoolcache/Python/3.10.5/x64/bin:$PATH"
-          python --version
-          ls -la $( which python )
+          python3 --version
+          ls -la $( which python3 )
           ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64
           ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/bin
           ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/include
