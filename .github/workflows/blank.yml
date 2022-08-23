@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  macos:
+  toolcashe:
     runs-on: macos-10.15
     steps:
 #      - uses: actions/checkout@v2
@@ -21,11 +21,23 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v3
         with:
-          python-version: 3.7.7
+          python-version: 3.10.6
           architecture: x64
           
       - run: |
           which python
           python --version
-
+   
+  binary:
+    runs-on: macos-10.15
+    steps:
+#      - uses: actions/checkout@v2
+      
+      - name: Setup python
+        run: |
+          curl https://www.python.org/ftp/python/3.10.6/python-3.10.6-macos11.pkg --output python-3.10.6-macos11.pkg
+          sudo installer -pkg python-3.10.6-macos11.pkg -target /
           
+      - run: |
+          which python
+          python --version
