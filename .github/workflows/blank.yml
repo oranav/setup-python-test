@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   toolcashe:
     runs-on: macos-latest
-    if: ${{ false }}
+    if: ${{ true }}
     steps:
 #      - uses: actions/checkout@v2
       
@@ -28,9 +28,12 @@ jobs:
       - run: |
           which python
           python --version
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin/
    
   binary:
     runs-on: macos-latest
+    if: ${{ false }}
     steps:
 #      - uses: actions/checkout@v2
       - run: |
