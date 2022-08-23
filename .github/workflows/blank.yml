@@ -48,7 +48,7 @@ jobs:
           sudo installer -pkg python-3.10.6-macos11.pkg -target /
           ls -la /Library/Frameworks/Python.framework/Versions/
 
-          sudo mkdir /Users/runner/hostedtoolcache/Python/3.10.6/x64/
+          test -d /Users/runner/hostedtoolcache/Python/3.10.6/x64 || sudo mkdir /Users/runner/hostedtoolcache/Python/3.10.6/x64
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/bin /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/include /Users/runner/hostedtoolcache/Python/3.10.6/x64/include
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/include /Users/runner/hostedtoolcache/Python/3.10.6/x64/share
