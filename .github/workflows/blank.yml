@@ -53,7 +53,7 @@ jobs:
           ls -la /Users/runner/hostedtoolcache/Python || echo "no hostedtoolcache/Python"
           ls -la /Users/runner/hostedtoolcache/Python/3.10.5  || echo "no hostedtoolcache/Python/3.1056"
           ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64  || echo "no hostedtoolcache/Python/3.10.5/x64"
-          sudo mkdir /Users/runner/hostedtoolcache/Python/3.10.5/x64
+          sudo mkdir -p /Users/runner/hostedtoolcache/Python/3.10.5/x64
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/bin /Users/runner/hostedtoolcache/Python/3.10.5/x64/bin
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/include /Users/runner/hostedtoolcache/Python/3.10.5/x64/include
           sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/share /Users/runner/hostedtoolcache/Python/3.10.5/x64/share
