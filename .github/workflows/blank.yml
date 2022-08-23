@@ -30,6 +30,8 @@ jobs:
           python --version
           ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/
           ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/include/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/share/
    
   binary:
     runs-on: macos-latest
