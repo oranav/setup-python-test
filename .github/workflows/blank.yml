@@ -63,8 +63,8 @@ jobs:
           export PATH="/Users/runner/hostedtoolcache/Python/3.10.5/x64/bin:$PATH"
           python --version
           ls -la $( which python )
-          ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64
-          ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/bin
-          ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/include
-          ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/share
-          ls -la /Users/runner/hostedtoolcache/Python/3.10.5/x64/lib
+          ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64
+          ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/bin
+          ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/include
+          ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/share
+          ls -laH /Users/runner/hostedtoolcache/Python/3.10.5/x64/lib
