@@ -36,6 +36,7 @@ jobs:
       - run: |
           which python
           python --version
+          ls -la /Library/Frameworks/Python.framework/Versions/
           
       - name: Setup python
         run: |
@@ -46,3 +47,4 @@ jobs:
           which python
           python --version
           ls -la $( which python )
+          ls -la /Library/Frameworks/Python.framework/Versions/
