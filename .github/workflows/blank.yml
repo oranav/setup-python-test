@@ -26,8 +26,8 @@ jobs:
           architecture: x64
           
       - run: |
-          which python
           python --version
+          ls -la $( which python )
           ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/
           ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin/
           ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/include/
@@ -35,22 +35,29 @@ jobs:
    
   binary:
     runs-on: macos-latest
-    if: ${{ false }}
+    if: ${{ true }}
     steps:
 #      - uses: actions/checkout@v2
       - run: |
           python --version
           ls -la $( which python )
-          ls -la /Library/Frameworks/Python.framework/Versions/
           
       - name: Setup python
         run: |
           curl https://www.python.org/ftp/python/3.10.6/python-3.10.6-macos11.pkg --output python-3.10.6-macos11.pkg
           sudo installer -pkg python-3.10.6-macos11.pkg -target /
-          ls -la $( which python )
           ls -la /Library/Frameworks/Python.framework/Versions/
+
+          sudo mkdir /Users/runner/hostedtoolcache/Python/3.10.6/x64/
+          sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/bin /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin
+          sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/include /Users/runner/hostedtoolcache/Python/3.10.6/x64/include
+          sudo ln -s /Library/Frameworks/Python.framework/Versions/3.10/include /Users/runner/hostedtoolcache/Python/3.10.6/x64/share
           
       - run: |
+          export PATH="/Users/runner/hostedtoolcache/Python/3.10.6/x64/bin:$PATH"
           python --version
           ls -la $( which python )
-          ls -la /Library/Frameworks/Python.framework/Versions/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/bin/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/include/
+          ls -la /Users/runner/hostedtoolcache/Python/3.10.6/x64/share/
