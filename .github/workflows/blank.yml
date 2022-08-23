@@ -34,8 +34,8 @@ jobs:
     steps:
 #      - uses: actions/checkout@v2
       - run: |
-          which python
           python --version
+          ls -la $( which python )
           ls -la /Library/Frameworks/Python.framework/Versions/
           
       - name: Setup python
@@ -44,7 +44,6 @@ jobs:
           sudo installer -pkg python-3.10.6-macos11.pkg -target /
           
       - run: |
-          which python
           python --version
           ls -la $( which python )
           ls -la /Library/Frameworks/Python.framework/Versions/
