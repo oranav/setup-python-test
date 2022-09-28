@@ -16,13 +16,14 @@ jobs:
         run: set
       - name: python
         id: python
-        uses: akv-platform/setup-python@v-sedoli-v2.0.1
+        uses: akv-platform/setup-python@v-sedoli-v2.0.2
         with:
           python-version: pypy-3.7
           architecture: x64
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
+          ls -l /opt/hostedtoolcache/Python
           python --version
           echo "py ver=${{ steps.python.outputs.python-version }}"
           
