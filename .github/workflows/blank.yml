@@ -10,16 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Show env
-        run: set
       - name: python
         id: python
-        uses: akv-platform/setup-python@v-sedoli-v2.0.2
+        uses: akv-platform/setup-python@v-sedoli-v2.0.3
         with:
-          python-version: 3.7.13
+          python-version: 3.7.1
           architecture: x64
+          
       - run: |
           whoami
           ls -l /opt/hostedtoolcache
