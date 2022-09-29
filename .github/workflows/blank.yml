@@ -24,7 +24,7 @@ jobs:
 
         uses: akv-platform/setup-python@v-sedoli-v2.0.5
         with:
-          python-version: pypy-3.7.9
+          python-version: pypy-3.6
           architecture: x64
           
       - run: |
