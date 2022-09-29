@@ -22,9 +22,9 @@ jobs:
         id: pypy
         if: always()
 
-        uses: akv-platform/setup-python@v-sedoli-v2.0.5
+        uses: akv-platform/setup-python@v-sedoli-v2.0.6
         with:
-          python-version: pypy-3.6
+          python-version: pypy-3.3
           architecture: x64
           
       - run: |
