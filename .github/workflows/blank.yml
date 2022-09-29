@@ -12,9 +12,20 @@ jobs:
     steps:
       - name: python
         id: python
-        uses: akv-platform/setup-python@v-sedoli-v2.0.4
+        if: always()
+
+        uses: akv-platform/setup-python@v-sedoli-v2.0.5
         with:
           python-version: 3.7.1
+          architecture: x64
+          
+      - name: pypy
+        id: pypy
+        if: always()
+
+        uses: akv-platform/setup-python@v-sedoli-v2.0.5
+        with:
+          python-version: pypy-3.7
           architecture: x64
           
       - run: |
