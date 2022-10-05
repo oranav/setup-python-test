@@ -14,4 +14,4 @@ jobs:
         with:
           token: "XXXX"
           #${{ secrets.GH_DOTCOM_TOKEN }}
-          python-version: 3.8
+          python-version: 3.8.13
