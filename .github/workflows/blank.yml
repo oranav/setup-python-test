@@ -53,6 +53,7 @@ jobs:
           #sudo installer -pkg /Volumes/XQuartz-2.8.2/XQuartz.pkg -target /
           curl -L https://www.python.org/ftp/python/3.10.7/python-3.10.7-macos11.pkg --output /tmp/python-3.10.7-macos11.pkg
           sudo installer -pkg /tmp/python-3.10.7-macos11.pkg -target /
+          export PATH=/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH
           #ls -la /Library/LaunchAgents
           which python3
           python --version
