@@ -39,9 +39,24 @@ jobs:
         run: set | grep DISPLAY || echo "no DISPLAY"
       - name: run tcltk
         run: |
-          curl -L https://www.python.org/ftp/python/3.9.1/python-3.9.1-macos11.pkg --output /tmp/python-3.9.1-macos11.pkg
-          sudo installer -pkg /tmp/python-3.9.1-macos11.pkg -target /
+          curl -L https://www.python.org/ftp/python/3.9.1/python-3.9.1-macos19.9.pkg --output /tmp/python-3.9.1-macos10.9.pkg
+          sudo installer -pkg /tmp/python-3.9.1-macos10.9.pkg -target /
           export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
+          which python3
+          python3 --version
+          python3 tcltk.py 
+          
+  macos-latest-python310-native:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show env
+        run: set | grep DISPLAY || echo "no DISPLAY"
+      - name: run tcltk
+        run: |
+          curl -L https://www.python.org/ftp/python/3.10.7/python-3.10.7-macos11.pkg --output /tmp/python-3.10.7-macos11.pkg
+          sudo installer -pkg /tmp/python-3.10.7-macos11.pkg -target /
+          export PATH=/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH
           which python3
           python3 --version
           python3 tcltk.py 
@@ -56,6 +71,23 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9.1
+          architecture: x64
+      - name: run tcltk
+        run: |
+          which python3
+          python3 --version
+          python3 tcltk.py 
+          
+  macos-latest-python310:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show env
+        run: set | grep DISPLAY || echo "no DISPLAY"
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.7
           architecture: x64
       - name: run tcltk
         run: |
