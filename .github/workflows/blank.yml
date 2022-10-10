@@ -47,6 +47,7 @@ jobs:
         #env:
         #  DISPLAY: ":0.0"
         run: |
+          grep -r 'or later required, have instead' /Users/runner/hostedtoolcache/Python/3.9.1/x64
           curl -L https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.2/XQuartz-2.8.2.dmg --output /tmp/XQuartz-2.8.2.dmg
           sudo hdiutil attach /tmp/XQuartz-2.8.2.dmg
           sudo installer -pkg /Volumes/XQuartz-2.8.2/XQuartz.pkg -target /
