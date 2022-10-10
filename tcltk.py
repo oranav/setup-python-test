@@ -1,8 +1,10 @@
 import tkinter
 import _tkinter
 
-header = _tkinter.TK_VERSION
-lib = tkinter.Tk().getvar('tk_version')
+header = 0 
+#_tkinter.TK_VERSION
+lib = 0
+#tkinter.Tk().getvar('tk_version')
 
 if lib != header:
   print('header version=' + header)
