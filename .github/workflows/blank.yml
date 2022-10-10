@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  macos:
+  macos1015:
     runs-on: macos-10.15
     steps:
       - uses: actions/checkout@v2
@@ -30,8 +30,8 @@ jobs:
           python --version
           python tcltk.py
           
-  linux:
-    runs-on: macos-latest
+  macos1016:
+    runs-on: macos-10.16
     steps:
       - uses: actions/checkout@v2
       - name: Show env
