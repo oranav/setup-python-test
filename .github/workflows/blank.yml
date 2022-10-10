@@ -51,7 +51,7 @@ jobs:
           #curl -L https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.2/XQuartz-2.8.2.dmg --output /tmp/XQuartz-2.8.2.dmg
           #sudo hdiutil attach /tmp/XQuartz-2.8.2.dmg
           #sudo installer -pkg /Volumes/XQuartz-2.8.2/XQuartz.pkg -target /
-          curl -L https://www.python.org/ftp/python/3.10.7/python-3.10.7-macos11.pkg /tmp/python-3.10.7-macos11.pkg
+          curl -L https://www.python.org/ftp/python/3.10.7/python-3.10.7-macos11.pkg --output /tmp/python-3.10.7-macos11.pkg
           sudo installer -pkg /tmp/python-3.10.7-macos11.pkg -target /
           #ls -la /Library/LaunchAgents
           which python3
