@@ -1,13 +1,12 @@
 import tkinter
-import _tkinter
+#import _tkinter
 
-header = 0 
+#header = 0 
 #_tkinter.TK_VERSION
-lib = 0
-#tkinter.Tk().getvar('tk_version')
+lib = tkinter.Tk().getvar('tk_version')
 
-if lib != header:
-  print('header version=' + header)
-  print('lib version=' + lib)
-  exit(1)
+#if lib != header:
+#  print('header version=' + header)
+#  print('lib version=' + lib)
+#  exit(1)
   
