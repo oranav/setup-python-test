@@ -31,6 +31,21 @@ jobs:
           python --version
           python tcltk.py
           
+  macos-latest-python391-native:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show env
+        run: set | grep DISPLAY || echo "no DISPLAY"
+      - name: run tcltk
+        run: |
+          curl -L https://www.python.org/ftp/python/3.9.1/python-3.9.1-macos11.pkg --output /tmp/python-3.9.1-macos11.pkg
+          sudo installer -pkg /tmp/python-3.9.1-macos11.pkg -target /
+          export PATH=/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH
+          which python3
+          python3 --version
+          python3 tcltk.py 
+          
   macos-latest-python391:
     runs-on: macos-latest
     steps:
@@ -38,26 +53,12 @@ jobs:
       - name: Show env
         run: set | grep DISPLAY || echo "no DISPLAY"
       - name: Setup python
-        if: ${{ false }}
         uses: actions/setup-python@v2
         with:
           python-version: 3.9.1
           architecture: x64
       - name: run tcltk
-        #env:
-        #  DISPLAY: ":0.0"
         run: |
-          #grep -r 'or later required, have instead' /Users/runner/hostedtoolcache/Python/3.9.1/x64
-          #curl -L https://github.com/XQuartz/XQuartz/releases/download/XQuartz-2.8.2/XQuartz-2.8.2.dmg --output /tmp/XQuartz-2.8.2.dmg
-          #sudo hdiutil attach /tmp/XQuartz-2.8.2.dmg
-          #sudo installer -pkg /Volumes/XQuartz-2.8.2/XQuartz.pkg -target /
-          curl -L https://www.python.org/ftp/python/3.10.7/python-3.10.7-macos11.pkg --output /tmp/python-3.10.7-macos11.pkg
-          sudo installer -pkg /tmp/python-3.10.7-macos11.pkg -target /
-          export PATH=/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH
-          #ls -la /Library/LaunchAgents
-          ls -l /Library/Frameworks/Python.framework/Versions/
-          ls -l /Library/Frameworks/Python.framework/Versions/3.10/bin
           which python3
           python3 --version
           python3 tcltk.py 
-          
