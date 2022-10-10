@@ -38,7 +38,7 @@ jobs:
       - name: Show env
         run: set | grep DISPLAY || echo "no DISPLAY"
       - name: Setup python
-        if: ${{ true }}
+        if: ${{ false }}
         uses: actions/setup-python@v2
         with:
           python-version: 3.9.1
@@ -55,7 +55,9 @@ jobs:
           sudo installer -pkg /tmp/python-3.10.7-macos11.pkg -target /
           export PATH=/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH
           #ls -la /Library/LaunchAgents
+          ls -l /Library/Frameworks/Python.framework/Versions/
+          ls -l /Library/Frameworks/Python.framework/Versions/3.10/bin
           which python3
-          python --version
-          python tcltk.py 
+          python3 --version
+          python3 tcltk.py 
           
